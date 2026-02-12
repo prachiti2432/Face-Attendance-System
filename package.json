@@ -1,0 +1,26 @@
+{
+  "name": "face-attendance-system",
+  "version": "1.0.0",
+  "description": "A web-based attendance system using TensorFlow.js and FaceAPI.js for face recognition. Teachers can register students' faces, recognize them in real-time, and export attendance records to a CSV file. All data is stored locally in the browser's localStorage.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuldeepsharma1/Face-attendance-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuldeepsharma1/Face-attendance-system/issues"
+  },
+  "homepage": "https://github.com/kuldeepsharma1/Face-attendance-system#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "vite": "^7.3.1"
+  }
+}
