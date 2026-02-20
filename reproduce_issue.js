@@ -1,9 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
-import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
 
-// Load .env manually since we are not using vite here
+// Load .env manually
 const envPath = path.resolve(process.cwd(), '.env');
 const envContent = fs.readFileSync(envPath, 'utf-8');
 const envConfig = {};
@@ -26,18 +25,24 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-async function verify() {
-    console.log('Checking "students" table...');
+async function testInsert() {
+    console.log('Attempting to insert dummy student...');
+    // Dummy face descriptor (128 floats)
+    const dummyDescriptor = Array(128).fill(0.1);
+
     const { data, error } = await supabase
         .from('students')
-        .select('id, name, created_at');
+        .insert([{
+            name: 'Test Student ' + Date.now(),
+            face_descriptor: dummyDescriptor
+        }])
+        .select();
 
     if (error) {
-        console.error('Error:', error.message);
+        console.error('Insert failed:', error);
     } else {
-        console.log(`Found ${data.length} student(s):`);
-        console.table(data);
+        console.log('Insert successful:', data);
     }
 }
 
-verify();
+testInsert();

@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="face-api.min.js"></script>
+  <script defer src="/face-api.min.js"></script>
   <script type="module" defer src="app.js"></script>
   <script defer src="/assets/js/main.js"></script>
-  <title>FaceGuard — Face Attendance System</title>
+  <title>Face Sentinel — Face Attendance System</title>
   <style>
     @keyframes float {
 
@@ -58,18 +58,15 @@
         <a href="index.html" class="inline-flex items-center gap-2">
           <span
             class="inline-block size-8 rounded-xl bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 shadow-inner"></span>
-          <span class="text-xl font-bold tracking-tight text-white">FaceGuard</span>
+          <span class="text-xl font-bold tracking-tight text-white">Face Sentinel</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a href="#features" class="text-slate-200 hover:text-white transition">Features</a>
           <a href="./about.html" class="text-slate-200 hover:text-white transition">About</a>
           <a href="#showcase" class="text-slate-200 hover:text-white transition">Showcase</a>
-          <a href="#" class="text-slate-200 hover:text-white transition">Blog</a>
+          <a href="./analytics.html" class="text-slate-200 hover:text-white transition">Analytics</a>
         </nav>
         <div class="hidden md:flex items-center gap-2">
-          <a href="login.html"
-            class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-slate-100 transition">Admin
-            Login</a>
           <a href="attendance.html"
             class="px-4 py-2 rounded-xl bg-gradient-to-tr from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white shadow-lg shadow-fuchsia-800/30 transition">
             Mark Attendance</a>
@@ -92,8 +89,6 @@
           <a href="#showcase" class="text-slate-200 hover:text-white transition">Showcase</a>
           <a href="#" class="text-slate-200 hover:text-white transition">Blog</a>
           <div class="h-px bg-white/10 my-2"></div>
-          <a href="attendance.html"
-            class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/10 text-slate-100 transition text-center">Login</a>
           <a href="register.html"
             class="px-4 py-2 rounded-xl bg-gradient-to-tr from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white shadow-lg shadow-fuchsia-800/30 transition text-center">Get
             Started</a>
@@ -116,7 +111,7 @@
             Secure. Effortless. <span
               class="bg-gradient-to-tr from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent">Attendance</span>
           </h1>
-          <p class="mt-4 text-slate-300 text-lg">Designed for precision and security. FaceGuard enables seamless
+          <p class="mt-4 text-slate-300 text-lg">Designed for precision and security. Face Sentinel enables seamless
             attendance management with real‑time face recognition, exportable logs, and an intuitive interface.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="register.html"
@@ -127,7 +122,7 @@
               class="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 text-slate-100 font-semibold transition">
               Open Attendance
             </a>
-            <a href="#showcase"
+            <a href="#demo"
               class="px-5 py-3 rounded-2xl bg-white/0 hover:bg-white/10 ring-1 ring-inset ring-white/10 text-slate-100 font-semibold transition inline-flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" class="size-5">
@@ -167,7 +162,7 @@
                 <span class="size-3 rounded-full bg-emerald-400/80"></span>
                 <span class="ml-2 text-xs text-slate-300">Live preview</span>
               </div>
-              <img src="/assets/face.jpg" alt="FaceGuard"
+              <img src="/assets/face.jpg" alt="Face Sentinel"
                 class="w-full max-h-[420px] object-cover animate-[float_6s_ease-in-out_infinite]" />
             </div>
           </div>
@@ -180,7 +175,7 @@
   <section id="features" class="relative pt-16 md:pt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Why FaceGuard</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Why Face Sentinel</h2>
         <p class="mt-3 text-slate-300 max-w-2xl mx-auto">A complete toolkit for modern attendance — with accuracy,
           privacy, and simplicity at its core.</p>
       </div>
@@ -280,7 +275,11 @@
             class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-emerald-500/10 via-cyan-500/10 to-fuchsia-500/10 blur-xl">
           </div>
           <div class="relative aspect-video w-full rounded-2xl overflow-hidden ring-1 ring-inset ring-white/10">
-            <img src="/assets/face.jpg" alt="Preview" class="size-full object-cover" />
+            <!-- Embedded demo video (external host). Replace src with your preferred AI demo URL if needed. -->
+            <iframe id="demo" class="size-full" src="https://www.youtube.com/embed/DLQd3R9hlFQ"
+              title="Face Sentinel Demo" loading="lazy" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -336,30 +335,10 @@
         </li>
       </ul>
       <div class="md:text-end space-x-2">
-        <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-400 hover:bg-gray-50/5 disabled:opacity-50 disabled:pointer-events-none"
-          href="https://hytek.org.in" target="_blank">
-          <img src="/assets/hytek.png" class="rounded-full w-4 h-4" alt="hytek website logo">
-        </a>
-        <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-400 hover:bg-gray-50/5 disabled:opacity-50 disabled:pointer-events-none"
-          href="https://x.com/kuldeepit1" target="_blank">
-          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-          </svg>
-        </a>
-        <a class="size-8 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-400 hover:bg-gray-50/5 disabled:opacity-50 disabled:pointer-events-none"
-          href="https://github.com/kuldeepsharma1/Face-attendance-system.git" target="_blank">
-          <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16">
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-          </svg>
-        </a>
       </div>
-      <div class="mt-8 text-center text-xs text-slate-500">created by <a class="hover:underline"
-          href="https://github.com/kuldeepsharma1" target="_blank">kuldeep sharma</a> &middot; <a
-          class="hover:underline" href="https://github.com/Chan-d-an" target="_blank">chandan kumar</a></div>
+      <div class="mt-8 text-center text-xs text-slate-500">created by Prachiti Patil &middot; <a class="hover:underline"
+          href="#" target="_blank">Harshita Tambe</a> &middot; <a class="hover:underline"
+          href="https://github.com/Chan-d-an" target="_blank">Riddhi Mirjulkar</a></div>
     </div>
   </footer>
 

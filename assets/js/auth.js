@@ -1,53 +1,121 @@
 import { supabase } from '../../lib/supabaseClient.js';
 
-const loginForm = document.getElementById('login-form');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const errorMessage = document.getElementById('error-message');
+// Role types
+export const ROLES = {
+    ADMIN: 'admin',
+    STAFF: 'staff',
+    STUDENT: 'student'
+};
 
-// --- Login Logic ---
-if (loginForm) {
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = emailInput.value;
-        const password = passwordInput.value;
-        const submitBtn = loginForm.querySelector('button[type="submit"]');
+/**
+ * Get current user's role
+ * @returns {Promise<string|null>}
+ */
+export async function getUserRole() {
+    try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) return null;
 
-        // Disable button
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Signing In...";
-        errorMessage.classList.add('hidden');
+        // Get user role from user_metadata or profiles table
+        const { data: profile } = await supabase
+            .from('profiles')
+            .select('role')
+            .eq('id', session.user.id)
+            .single();
 
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email: email,
-            password: password,
-        });
-
-        if (error) {
-            errorMessage.textContent = error.message;
-            errorMessage.classList.remove('hidden');
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Sign In";
-        } else {
-            // Success
-            window.location.href = '/register.html';
-        }
-    });
+        return profile?.role || session.user.user_metadata?.role || null;
+    } catch (error) {
+        console.error('Error getting user role:', error);
+        return null;
+    }
 }
 
-// --- Check Auth Status & Route Protection ---
-export async function requireAuth() {
+/**
+ * Check if user has required role
+ * @param {string|string[]} requiredRoles 
+ * @returns {Promise<boolean>}
+ */
+export async function hasRole(requiredRoles) {
+    const userRole = await getUserRole();
+    if (!userRole) return false;
+
+    const roles = Array.isArray(requiredRoles) ? requiredRoles : [requiredRoles];
+    return roles.includes(userRole);
+}
+
+/**
+ * Check auth status and optionally verify role
+ * @param {string|string[]} requiredRoles - Optional role requirement
+ */
+export async function requireAuth(requiredRoles = null) {
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) {
-        window.location.href = '/login.html';
+        window.location.href = '/index.html';
+        return false;
     }
+
+    if (requiredRoles) {
+        const hasRequiredRole = await hasRole(requiredRoles);
+        if (!hasRequiredRole) {
+            alert('You do not have permission to access this page.');
+            window.location.href = '/index.html';
+            return false;
+        }
+    }
+
+    return true;
+}
+
+/**
+ * Check if user is admin
+ */
+export async function isAdmin() {
+    return await hasRole(ROLES.ADMIN);
+}
+
+/**
+ * Check if user is staff
+ */
+export async function isStaff() {
+    return await hasRole([ROLES.ADMIN, ROLES.STAFF]);
+}
+
+/**
+ * Check if user is student
+ */
+export async function isStudent() {
+    return await hasRole(ROLES.STUDENT);
 }
 
 // --- Logout Logic ---
 export async function signOut() {
     const { error } = await supabase.auth.signOut();
     if (!error) {
-        window.location.href = '/login.html';
+        window.location.href = '/index.html';
+    }
+}
+
+/**
+ * Update user role (admin only)
+ * @param {string} userId 
+ * @param {string} role 
+ */
+export async function updateUserRole(userId, role) {
+    if (!Object.values(ROLES).includes(role)) {
+        throw new Error('Invalid role');
+    }
+
+    const { error } = await supabase
+        .from('profiles')
+        .upsert({
+            id: userId,
+            role: role,
+            updated_at: new Date().toISOString()
+        });
+
+    if (error) {
+        console.error('Error updating user role:', error);
+        throw error;
     }
 }
 

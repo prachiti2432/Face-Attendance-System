@@ -1,70 +1,70 @@
 // Define the time table
 const timetable = {
     "Monday": [
-        { time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-        { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+        { time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+        { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
         { time: "10:45 AM", event: "Tea Break" },
-        { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-        { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+        { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+        { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
         { time: "01:00 PM", event: "Lunch Break" },
-        { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-        { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-        { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-        { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }
+        { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+        { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+        { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+        { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }
     ],
     "Tuesday": [
-        { time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-        { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+        { time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+        { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
         { time: "10:45 AM", event: "Tea Break" },
-        { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-        { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+        { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+        { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
         { time: "01:00 PM", event: "Lunch Break" },
-        { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-        { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-        { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-        { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }
+        { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+        { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+        { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+        { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }
     ],
     // Timetables for other days of the week
-    "Wednesday": [{ time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-    { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+    "Wednesday": [{ time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+    { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
     { time: "10:45 AM", event: "Tea Break" },
-    { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-    { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+    { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+    { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
     { time: "01:00 PM", event: "Lunch Break" },
-    { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-    { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-    { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-    { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }],
-    "Thursday": [  { time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-    { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+    { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+    { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+    { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+    { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }],
+    "Thursday": [{ time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+    { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
     { time: "10:45 AM", event: "Tea Break" },
-    { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-    { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+    { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+    { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
     { time: "01:00 PM", event: "Lunch Break" },
-    { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-    { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-    { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-    { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }],
-    "Friday": [  { time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-    { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+    { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+    { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+    { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+    { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }],
+    "Friday": [{ time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+    { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
     { time: "10:45 AM", event: "Tea Break" },
-    { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-    { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+    { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+    { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
     { time: "01:00 PM", event: "Lunch Break" },
-    { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-    { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-    { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-    { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }],
-    "Saturday": [  { time: "09:00 AM", event: "Class 1", teacher: "Amanda", status: "False" },
-    { time: "10:00 AM", event: "Class 2", teacher: "Amanda", status: "False" },
+    { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+    { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+    { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+    { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }],
+    "Saturday": [{ time: "09:00 AM", event: "Class 1", teacher: "Sheetal", status: "False" },
+    { time: "10:00 AM", event: "Class 2", teacher: "Sheetal", status: "False" },
     { time: "10:45 AM", event: "Tea Break" },
-    { time: "11:00 AM", event: "Class 3", teacher: "Amanda", status: "False" },
-    { time: "12:00 PM", event: "Class 4", teacher: "Amanda", status: "False" },
+    { time: "11:00 AM", event: "Class 3", teacher: "Sheetal", status: "False" },
+    { time: "12:00 PM", event: "Class 4", teacher: "Sheetal", status: "False" },
     { time: "01:00 PM", event: "Lunch Break" },
-    { time: "02:00 PM", event: "Class 5", teacher: "Amanda", status: "False" },
-    { time: "03:00 PM", event: "Class 6", teacher: "Amanda", status: "False" },
-    { time: "04:00 PM", event: "Class 7", teacher: "Amanda", status: "False" },
-    { time: "05:00 PM", event: "Class 8", teacher: "Amanda", status: "False" }],
+    { time: "02:00 PM", event: "Class 5", teacher: "Sheetal", status: "False" },
+    { time: "03:00 PM", event: "Class 6", teacher: "Sheetal", status: "False" },
+    { time: "04:00 PM", event: "Class 7", teacher: "Sheetal", status: "False" },
+    { time: "05:00 PM", event: "Class 8", teacher: "Sheetal", status: "False" }],
 
 };
 const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
@@ -116,10 +116,11 @@ function displayTimetable() {
 const dateElement = document.getElementById('date');
 const timeElement = document.getElementById('time');
 
-// Function to update the time
+// Update the time
 function updateTime() {
     const currentTime = new Date();
-    dateElement.textContent = currentTime.toLocaleDateString('en-US');
+    // dateElement.textContent = currentTime.toLocaleDateString('en-US');
+    dateElement.textContent = "10 Feb 2026";
     timeElement.textContent = currentTime.toLocaleTimeString('en-US');
 }
 
@@ -131,6 +132,5 @@ setInterval(updateTime, 1000);
 
 // Display the timetable when the page loads
 window.addEventListener('load', displayTimetable);
-
 
 

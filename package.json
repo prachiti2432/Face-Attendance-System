@@ -8,17 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kuldeepsharma1/Face-attendance-system.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kuldeepsharma1/Face-attendance-system/issues"
-  },
-  "homepage": "https://github.com/kuldeepsharma1/Face-attendance-system#readme",
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",
     "vite": "^7.3.1"
